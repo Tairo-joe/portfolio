@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Photography &amp; Videography</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html#home">&copy; Isaac Tairo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 text-center">
+    <div class="container">
+      <h1 class="display-6 fw-bold mb-2">Gallery</h1>
+      <p class="text-muted mb-0">Tap an image to view full screen. Use arrows or swipe.</p>
+    </div>
+ </header>
+
+  <main class="container pb-5">
+    <!-- Masonry-like responsive grid -->
+    <div class="gallery-grid">
+      <!-- Thumbnails (add/remove as needed) -->
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.55.55.jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.55.55.jpeg" alt="Gallery image 1" loading="lazy">
+        <div class="caption">Dinner Night</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.55.56.jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.55.56.jpeg" alt="Gallery image 2" loading="lazy">
+        <div class="caption">Dinner Night</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.55.57.jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.55.57.jpeg" alt="Gallery image 3" loading="lazy">
+        <div class="caption">GINA Foundation</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.57.50.jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.57.50.jpeg" alt="Gallery image 4" loading="lazy">
+        <div class="caption">GINA Foundation</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.55.56 (1).jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.55.56 (1).jpeg" alt="Gallery image 5" loading="lazy">
+        <div class="caption">Dinner Night</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.55.56 (2).jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.55.56 (2).jpeg" alt="Gallery image 6" loading="lazy">
+        <div class="caption">Dinner Night</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.57.50 (1).jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.57.50 (1).jpeg" alt="Gallery image 7" loading="lazy">
+        <div class="caption">GINA Foundation</div>
+      </a>
+      <a href="assets/WhatsApp Image 2025-10-06 at 11.57.50 (2).jpeg" class="gallery-item">
+        <img src="assets/WhatsApp Image 2025-10-06 at 11.57.50 (2).jpeg" alt="Gallery image 8" loading="lazy">
+        <div class="caption">GINA Foundation</div>
+      </a>
+      <!-- Video 1 -->
+      <div class="gallery-item video-item" data-src="assets/AMPS-CONCERT-25.mp4">
+        <video controls>
+          <source src="assets/AMPS-CONCERT-25.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">AMPS CONCERT '25</div>
+      </div>
+      <!-- Video 2 -->
+      <div class="gallery-item video-item" data-src="assets/Y-ELEMENT-DINNER-NIGHT-25.mp4">
+        <video controls>
+          <source src="assets/Y-ELEMENT-DINNER-NIGHT-25.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">Y-ELEMENT DINNER NIGHT '25</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button type="button" class="lightbox-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    <button type="button" class="lightbox-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+    <img id="lightboxImage" src="assets/profile-placeholder.svg" alt="Expanded view">
+    <video id="lightboxVideo" controls style="display: none;"></video>
+    <button type="button" class="lightbox-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+  </div>
+
+  <footer class="site-footer py-4 mt-auto">
+    <div class="container text-center text-muted small">
+      © 2025 Isaac Tairo | Gallery
+    </div>
+ </footer>
+
+  <!-- Theme toggle button -->
+  <button id="themeToggle" type="button" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4 shadow-sm" aria-label="Toggle dark mode">
+    <i class="bi bi-moon"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Dark mode init (same behavior as index)
+    (function() {
+      var root = document.documentElement;
+      var KEY = 'theme';
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var saved = localStorage.getItem(KEY) || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-bs-theme', saved);
+      var btn = document.getElementById('themeToggle');
+      function setIcon(t) {
+        if (!btn) return;
+        var icon = btn.querySelector('i');
+        if (!icon) return;
+        icon.classList.toggle('bi-sun', t === 'dark');
+        icon.classList.toggle('bi-moon', t !== 'dark');
+      }
+      setIcon(saved);
+      if (btn) {
+        btn.addEventListener('click', function() {
+          var current = root.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'light';
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-bs-theme', next);
+          localStorage.setItem(KEY, next);
+          setIcon(next);
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      // Touch: tap to toggle caption; auto-hide after 2s
+      const itemsForTouch = Array.from(document.querySelectorAll('.gallery-item'));
+      let hideTimer;
+      function showOnce(el){
+        el.classList.add('show-caption');
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(()=> el.classList.remove('show-caption'), 2000);
+      }
+      itemsForTouch.forEach(el => {
+        el.addEventListener('touchstart', () => showOnce(el), {passive:true});
+      });
+
+      const items = Array.from(document.querySelectorAll('.gallery-item'));
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImage');
+      const video = document.getElementById('lightboxVideo');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const prevBtn = lightbox.querySelector('.lightbox-prev');
+      const nextBtn = lightbox.querySelector('.lightbox-next');
+      let index = 0;
+
+      function open(i) {
+        index = i;
+        const item = items[index];
+        if (item.classList.contains('video-item')) {
+          video.src = item.dataset.src;
+          video.style.display = 'block';
+          img.style.display = 'none';
+          video.play();
+        } else {
+          img.src = item.getAttribute('href');
+          img.style.display = 'block';
+          video.style.display = 'none';
+        }
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        video.pause();
+        video.src = '';
+      }
+      function next() {
+        open((index + 1) % items.length);
+      }
+      function prev() {
+        open((index - 1 + items.length) % items.length);
+      }
+
+      items.forEach((a, i) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          open(i);
+        });
+      });
+      closeBtn.addEventListener('click', close);
+      nextBtn.addEventListener('click', next);
+      prevBtn.addEventListener('click', prev);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+
+      // Swipe support
+      let startX = 0;
+      lightbox.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].clientX;
+      });
+      lightbox.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+      });
+    })();
+  </script>
+</body>
+</html>
+
+

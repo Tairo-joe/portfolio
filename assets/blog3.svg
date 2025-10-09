@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#f7f3ff"/>
+  <rect x="120" y="140" width="960" height="80" rx="12" fill="#6f42c1" opacity="0.15"/>
+  <rect x="120" y="250" width="720" height="18" rx="9" fill="#6f42c1" opacity="0.12"/>
+  <rect x="120" y="280" width="860" height="18" rx="9" fill="#6f42c1" opacity="0.1"/>
+  <rect x="120" y="310" width="640" height="18" rx="9" fill="#6f42c1" opacity="0.08"/>
+  <text x="120" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" font-weight="600" fill="#6f42c1">AI / Face Recognition Notes Cover</text>
+</svg>

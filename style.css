@@ -1,0 +1,286 @@
+/* Custom theme for Isaac Leslie Portfolio */
+/* Typography & base */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --brand-primary: #0d6efd; /* Bootstrap primary */
+  --brand-primary-600: #0b5ed7;
+  --brand-gray-50: #f7f9fc;
+  --brand-gray-100: #f1f4f9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #1f2d3d;
+}
+
+/* Navbar */
+.navbar {
+  transition: box-shadow .2s ease;
+}
+.navbar.stuck, .navbar:hover {
+  box-shadow: 0 .25rem 1.25rem rgba(0,0,0,.06);
+}
+.navbar .nav-link {
+  font-weight: 500;
+}
+.navbar .nav-link.active {
+  color: var(--brand-primary) !important;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  background:
+    radial-gradient(60rem 20rem at 20% 10%, rgba(13,110,253,.10), transparent 40%),
+    radial-gradient(40rem 18rem at 90% -10%, rgba(13,110,253,.12), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, var(--brand-gray-50) 100%);
+  min-height: 88vh;
+}
+.hero-title {
+  letter-spacing: -0.5px;
+}
+.hero-tagline {
+  font-size: 1.1rem;
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+}
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+/* About */
+.profile-avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.08);
+}
+
+/* Skills */
+.skill-badge {
+  display: inline-block;
+  margin: 6px 8px 0 0;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  background: #edf2ff;
+  color: #234;
+  border: 1px solid #dbe4ff;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+/* Projects */
+.project-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.12);
+}
+.project-card img {
+  transition: transform .4s ease, filter .4s ease;
+}
+.project-card:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.05);
+}
+
+/* Buttons */
+.btn-primary {
+  box-shadow: 0 .5rem 1rem rgba(13,110,253,.15);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--brand-primary-600);
+}
+[data-bs-theme="dark"] .btn-primary {
+  color: #ffffff !important;
+}
+
+/* Contact */
+.contact-card {
+  border: 1px solid #e9ecef;
+}
+
+/* Footer */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #e9ecef;
+}
+
+/* ===================== Gallery ===================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 576px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 992px) {
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.gallery-item { position: relative; overflow: hidden; border-radius: 12px; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transform: scale(1); filter: saturate(1) brightness(1);
+  transition: transform .4s ease, filter .4s ease;
+}
+.gallery-item video {
+  width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block;
+  transition: transform .4s ease, filter .4s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); filter: saturate(1.1) brightness(1.05); }
+.gallery-item:hover video { transform: scale(1.04); filter: saturate(1.1) brightness(1.05); }
+
+/* Gallery captions */
+.gallery-item .caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff; font-weight: 600; font-size: .9rem; letter-spacing: .2px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.gallery-item.video-item .caption {
+  bottom: 50px; /* Leave space for video controls */
+}
+.gallery-item:hover .caption,
+.gallery-item:focus-within .caption,
+.gallery-item.show-caption .caption { opacity: 1; transform: translateY(0); }
+@media (min-width: 576px) { .gallery-item .caption { font-size: 1rem; padding: 12px 14px; } }
+@media (min-width: 992px) { .gallery-item .caption { font-size: 1.05rem; } }
+
+[data-bs-theme="dark"] .gallery-item .caption {
+  background: linear-gradient(180deg, rgba(2,6,23,0) 0%, rgba(2,6,23,.65) 60%, rgba(2,6,23,.85) 100%);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.8);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  padding: 24px;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img, .lightbox video {
+  max-width: 92vw;
+  max-height: 88vh;
+}
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute; background: rgba(15,23,42,.8); color: #fff; border: 1px solid rgba(255,255,255,.15);
+  width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center;
+}
+.lightbox-close { top: 20px; right: 20px; }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-prev i, .lightbox-next i, .lightbox-close i { font-size: 1rem; }
+
+/* Dark mode for gallery */
+[data-bs-theme="dark"] .lightbox { background: rgba(0,0,0,.85); }
+[data-bs-theme="dark"] .lightbox-close, [data-bs-theme="dark"] .lightbox-prev, [data-bs-theme="dark"] .lightbox-next {
+  background: rgba(2,6,23,.9); border-color: rgba(255,255,255,.2);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ==========================================================
+   Dark mode overrides (when <html data-bs-theme="dark">)
+   Palette: blue + gray, matching Bootstrap 5 tones
+   ========================================================== */
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-bs-theme="dark"] body {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+[data-bs-theme="dark"] .navbar {
+  background-color: #0b1220 !important;
+  border-bottom: 1px solid #1e293b;
+}
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #cbd5e1;
+}
+[data-bs-theme="dark"] .navbar .nav-link.active {
+  color: var(--brand-primary) !important;
+}
+
+/* Sections that use light backgrounds */
+[data-bs-theme="dark"] .bg-light {
+  background-color: #0f172a !important;
+}
+
+/* Hero: soften gradients for dark background */
+[data-bs-theme="dark"] .hero-section {
+  background:
+    radial-gradient(60rem 20rem at 20% 10%, rgba(13,110,253,.10), transparent 40%),
+    radial-gradient(40rem 18rem at 90% -10%, rgba(13,110,253,.12), transparent 40%),
+    linear-gradient(180deg, #0b1220 0%, #0b1220 100%);
+}
+
+/* Cards */
+[data-bs-theme="dark"] .card {
+  background-color: #0f172a;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+[data-bs-theme="dark"] .project-card:hover {
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.45);
+}
+
+/* Skill badges */
+[data-bs-theme="dark"] .skill-badge {
+  background: #1f2937;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+/* Footer */
+[data-bs-theme="dark"] .site-footer {
+  background: #0f172a;
+  border-top-color: #1e293b;
+  color: #ffffff;
+}
+[data-bs-theme="dark"] .site-footer a { color: #ffffff; }
+
+/* CTA section */
+[data-bs-theme="dark"] #cta {
+  background-color: #0b1220; /* same as main background */
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  color: #ffffff !important;
+}
+
+/* Ensure CTA heading text remains readable in dark mode */
+[data-bs-theme="dark"] #cta h3 {
+  color: #ffffff;
+}
+
+/* Text tones */
+[data-bs-theme="dark"] .text-muted { color: #ffffff !important; }
+[data-bs-theme="dark"] .text-secondary { color: #ffffff !important; }
+[data-bs-theme="dark"] a { color: #60a5fa; }
+[data-bs-theme="dark"] a:hover { color: #93c5fd; }
+
+/* Theme toggle button */
+[data-bs-theme="dark"] #themeToggle {
+  background-color: #0f172a;
+  color: #afb4bd;
+  border-color: #334155;
+}

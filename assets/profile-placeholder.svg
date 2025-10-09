@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d6efd"/>
+      <stop offset="100%" stop-color="#6ea8fe"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e9f2ff"/>
+      <stop offset="100%" stop-color="#f8f9fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" fill="url(#g2)"/>
+  <circle cx="240" cy="200" r="120" fill="url(#g1)"/>
+  <text x="240" y="215" font-family="Inter, Arial, Helvetica, sans-serif" font-size="84" font-weight="700" text-anchor="middle" fill="#ffffff">IL</text>
+  <rect x="120" y="340" width="240" height="16" rx="8" fill="#cfe2ff"/>
+  <rect x="165" y="365" width="150" height="12" rx="6" fill="#dee2e6"/>
+</svg>
